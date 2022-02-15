@@ -1,5 +1,7 @@
 package com.company;
 
+import java.lang.reflect.Array;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
@@ -13,7 +15,9 @@ public class Main {
             dailyAverageTemp[i] = userInput.nextDouble();
 
         }
-        System.out.println("Daily average temperatures are: " + dailyAverageTemp[7]);
+        System.out.println("Each daily average temperature is: " + Arrays.toString(dailyAverageTemp));
 
+         double weekly =   Arrays.stream(dailyAverageTemp).sum() / dailyAverageTemp.length;
+        System.out.println("The average weekly temperature is: " + weekly);
     }
 }
